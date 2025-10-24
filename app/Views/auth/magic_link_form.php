@@ -1,4 +1,4 @@
-<?= $this->extend(config('Auth')->views['layout']) ?>
+<?= $this->extend('layouts/auth') ?>
 
 <?= $this->section('title') ?>Login link<?= $this->endSection() ?>
 

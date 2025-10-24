@@ -34,6 +34,12 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+
+        // Shield
+        'session'       => \CodeIgniter\Shield\Filters\SessionAuth::class,
+
+        // Custom
+        'loginGuard'    => \App\Filters\LoginGuard::class,
     ];
 
     /**

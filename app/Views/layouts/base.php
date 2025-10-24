@@ -15,9 +15,7 @@
 
 <body class="bg-light">
 
-    <main role="main" class="container">
-        <?= $this->renderSection('main') ?>
-    </main>
+    <?= $this->renderSection('body') ?>
 
     <?= $this->renderSection('pageScripts') ?>
 

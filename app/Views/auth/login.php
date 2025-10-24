@@ -1,4 +1,4 @@
-<?= $this->extend('layout') ?>
+<?= $this->extend('layouts/auth') ?>
 
 <?= $this->section('title') ?><?= lang('Auth.login') ?> <?= $this->endSection() ?>
 
@@ -62,7 +62,7 @@
                 <?php endif ?>
 
                 <?php if (setting('Auth.allowRegistration')) : ?>
-                    <p class="text-center">Belum punya akun? <a href="<?= url_to('register') ?>">Daftar</a></p>
+                    <p class="text-center">Belum punya akun? <a href="/register">Daftar</a></p>
                 <?php endif ?>
 
             </form>

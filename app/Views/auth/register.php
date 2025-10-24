@@ -1,4 +1,4 @@
-<?= $this->extend(config('Auth')->views['layout']) ?>
+<?= $this->extend('layouts/auth') ?>
 
 <?= $this->section('title') ?><?= lang('Auth.register') ?> <?= $this->endSection() ?>
 
@@ -54,7 +54,7 @@
                     <button type="submit" class="btn btn-primary btn-block">Daftar</button>
                 </div>
 
-                <p class="text-center">Sudah punya akun? <a href="<?= url_to('login') ?>"><?= lang('Auth.login') ?></a></p>
+                <p class="text-center">Sudah punya akun? <a href="/login"><?= lang('Auth.login') ?></a></p>
 
             </form>
         </div>
