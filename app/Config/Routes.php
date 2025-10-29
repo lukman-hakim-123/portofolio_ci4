@@ -13,4 +13,6 @@ service('auth')->routes($routes);
 
 $routes->group('admin', ['filter' => 'session'], static function ($routes) {
     $routes->get('/', 'DashboardController::index');
+    $routes->get('profile', 'ProfileController::index');
+    $routes->post('profile/update', 'ProfileController::update');
 });

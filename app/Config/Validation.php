@@ -113,4 +113,44 @@ class Validation extends BaseConfig
             ]
         ],
     ];
+
+    public array $profileUpdate = [
+        'photo' => [
+            'label' => 'Foto Profil',
+            'rules' => 'if_exist|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png,image/webp]|max_size[photo,2048]',
+            'errors' => [
+                'is_image' => 'File harus berupa gambar.',
+                'mime_in' => 'Format gambar tidak valid (hanya JPG, PNG, WEBP).',
+                'max_size' => 'Ukuran gambar maksimal 2MB.',
+            ],
+        ],
+
+        'username' => [
+            'label' => 'Nama Pengguna',
+            'rules' => 'required|min_length[3]|max_length[50]',
+            'errors' => [
+                'required' => 'Nama pengguna tidak boleh kosong.',
+                'min_length' => 'Nama pengguna minimal 3 karakter.',
+                'max_length' => 'Nama pengguna maksimal 50 karakter.',
+            ],
+        ],
+
+        'email' => [
+            'label' => 'Email',
+            'rules' => 'required|valid_email|max_length[100]',
+            'errors' => [
+                'required' => 'Email wajib diisi.',
+                'valid_email' => 'Format email tidak valid.',
+                'max_length' => 'Email terlalu panjang.',
+            ],
+        ],
+
+        'bio' => [
+            'label' => 'Bio',
+            'rules' => 'permit_empty|max_length[255]',
+            'errors' => [
+                'max_length' => 'Bio maksimal 255 karakter.',
+            ],
+        ],
+    ];
 }

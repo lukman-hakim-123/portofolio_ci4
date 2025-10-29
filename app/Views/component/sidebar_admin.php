@@ -1,55 +1,47 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-    <div class="position-sticky pt-3">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse p-3">
+    <div class="position-sticky">
         <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">
-                    <span data-feather="home"></span>
-                    Dashboard
+            <li class="nav-item mb-2">
+                <a class="nav-link <?= url_is('admin') ? 'active' : '' ?>" href="<?= site_url('admin') ?>">
+                    <i data-feather="home" class="me-2"></i> Dashboard
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item mb-2">
                 <a class="nav-link" href="#">
-                    <span data-feather="briefcase"></span>
-                    Projects
+                    <i data-feather="briefcase" class="me-2"></i> Projects
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a class="nav-link" href="#">
+                    <i data-feather="tool" class="me-2"></i> Skills
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a class="nav-link" href="#">
+                    <i data-feather="award" class="me-2"></i> Experience
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a class="nav-link" href="#">
+                    <i data-feather="book-open" class="me-2"></i> Education
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a class="nav-link" href="#">
+                    <i data-feather="mail" class="me-2"></i> Messages
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="tool"></span>
-                    Skills
+                <a class="nav-link <?= url_is('admin/profile*') ? 'active' : '' ?>" href="<?= site_url('admin/profile') ?>">
+                    <i data-feather="user" class="me-2"></i> Profile
                 </a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="award"></span>
-                    Experience
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="book-open"></span>
-                    Education
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="mail"></span>
-                    Messages
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="user"></span>
-                    Profile
-                </a>
-            </li>
-
         </ul>
     </div>
 </nav>

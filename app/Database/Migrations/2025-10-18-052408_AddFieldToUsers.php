@@ -34,7 +34,7 @@ class AddMobileNumberToUsers extends Migration
                 'null'       => true
             ],
             'social_links' => [
-                'type' => 'TEXT',
+                'type' => 'JSON',
                 'null' => true,
             ],
         ];

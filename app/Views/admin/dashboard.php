@@ -1,6 +1,6 @@
 <?php $this->extend('layouts/admin') ?>
 
-<?php $this->section('title') ?>Dashboard<?php $this->endSection() ?>
+<?php $this->section('title') ?><?php $title ?><?php $this->endSection() ?>
 
 <?php $this->section('main') ?>
 
@@ -8,6 +8,6 @@
     <h1 class="h2">Dashboard</h1>
 </div>
 
-<p>Selamat datang di dashboard admin!</p>
+<p>Selamat datang di dashboard <?= $user->username ?>!</p>
 
 <?= $this->endSection() ?>

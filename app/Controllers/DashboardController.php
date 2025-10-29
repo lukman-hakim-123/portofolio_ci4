@@ -9,6 +9,17 @@ class DashboardController extends BaseController
 {
     public function index()
     {
-        return view('admin/dashboard');
+
+        $user = auth()->user();
+
+        $socialLinks = json_decode($user->social_links ?? '{}', true);
+
+        $data = [
+            'title' => 'Dashboard',
+            'user'  => $user,
+            'social_links' => $socialLinks,
+        ];
+
+        return view('admin/dashboard', $data);
     }
 }
