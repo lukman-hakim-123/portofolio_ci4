@@ -15,4 +15,7 @@ $routes->group('admin', ['filter' => 'session'], static function ($routes) {
     $routes->get('/', 'DashboardController::index');
     $routes->get('profile', 'ProfileController::index');
     $routes->post('profile/update', 'ProfileController::update');
+    $routes->get('pendidikan', 'EducationController::index');
+    $routes->get('pendidikan/tambah', 'EducationController::create');
+    $routes->post('pendidikan/store', 'EducationController::store');
 });

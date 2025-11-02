@@ -26,8 +26,8 @@
             </li>
 
             <li class="nav-item mb-2">
-                <a class="nav-link" href="#">
-                    <i data-feather="book-open" class="me-2"></i> Education
+                <a class="nav-link <?= url_is('admin/pendidikan*') ? 'active' : '' ?>" href="<?= site_url('admin/pendidikan') ?>">
+                    <i data-feather="book-open" class="me-2"></i> Pendidikan
                 </a>
             </li>
 

@@ -4,7 +4,7 @@
 
 <?= $this->section('main') ?>
 
-<div class="card-body p-4 mt-4">
+<div class="card-body p-4 mt-1">
     <?php if (session()->getFlashdata('message')): ?>
         <div class="alert alert-success"><?= session('message') ?></div>
     <?php endif; ?>
@@ -13,26 +13,28 @@
         <?= csrf_field() ?>
 
         <!-- Profile Photo -->
-        <div class="mb-4 text-center">
+        <h5 class="mb-4">Foto Profile</h5>
+        <div class="mb-4 text-center d-flex justify-content-start align-items-center">
             <?php if ($user->image): ?>
                 <img id="profile-preview"
                     src="<?= base_url('images/profile/' . $user->image) ?>"
                     alt="Profile"
-                    class="rounded-circle mb-3 shadow-sm"
+                    class="rounded-circle mb-3 shadow-sm border border-3 border-secondary-subtle"
                     width="120" height="120"
                     style="object-fit: cover;">
             <?php else: ?>
                 <img id="profile-preview"
-                    src="https://via.placeholder.com/120x120?text=No+Image"
+                    src="<?= site_url('images/profile/default-user.png') ?>"
                     alt="Profile"
-                    class="rounded-circle mb-3 shadow-sm bg-light"
+                    class="rounded-circle mb-3 shadow-sm bg-light border border-3 border-secondary-subtle"
                     width="120" height="120"
                     style="object-fit: cover;">
             <?php endif; ?>
 
-            <div>
-                <label class="btn btn-outline-secondary btn-sm">
-                    <i class="bi bi-camera"></i> Change Photo
+            <div class="ms-4 d-flex align-items-center">
+                <label class="btn btn-sm text-black bg-body-secondary p-2 border border-secondary hover-opacity">
+                    <i data-feather="camera" class="me-1"></i>
+                    <span>Change Photo</span>
                     <input
                         type="file"
                         name="photo"
@@ -48,7 +50,6 @@
                 <?php endif; ?>
             </div>
         </div>
-
 
         <!-- Bio -->
         <div class="mb-3">
@@ -104,7 +105,10 @@
 
         <div class="text-end mt-4">
             <button type="submit" class="btn btn-primary px-4">
-                <i class="bi bi-save"></i> Save Changes
+                <div class="d-flex align-items-center justify-content-center">
+                    <i data-feather="save" class="me-1"></i>
+                    <span>Save Changes</span>
+                </div>
             </button>
         </div>
     </form>

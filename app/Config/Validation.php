@@ -7,6 +7,7 @@ use CodeIgniter\Validation\StrictRules\CreditCardRules;
 use CodeIgniter\Validation\StrictRules\FileRules;
 use CodeIgniter\Validation\StrictRules\FormatRules;
 use CodeIgniter\Validation\StrictRules\Rules;
+use \App\Validation\CustomRules;
 
 class Validation extends BaseConfig
 {
@@ -25,6 +26,7 @@ class Validation extends BaseConfig
         FormatRules::class,
         FileRules::class,
         CreditCardRules::class,
+        CustomRules::class,
     ];
 
     /**
@@ -151,6 +153,47 @@ class Validation extends BaseConfig
             'errors' => [
                 'max_length' => 'Bio maksimal 255 karakter.',
             ],
+        ],
+    ];
+
+    public array $education = [
+        'logo' => [
+            'label' => 'logo',
+            'rules' => 'uploaded[logo]|is_image[logo]|mime_in[logo,image/jpg,image/jpeg,image/png,image/webp]|max_size[logo,2048]',
+            'errors' => [
+                'uploaded' => 'Logo wajib diisi.',
+                'is_image' => 'File harus berupa gambar.',
+                'mime_in' => 'Format gambar tidak valid (hanya JPG, PNG, WEBP).',
+                'max_size' => 'Ukuran gambar maksimal 2MB.',
+            ]
+        ],
+        'institution' => [
+            'label' => 'institution',
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'Nama Sekolah/Universitas wajib diisi.',
+            ]
+        ],
+        'major' => [
+            'label' => 'major',
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'Jurusan wajib diisi.',
+            ]
+        ],
+        'start_year' => [
+            'label' => 'start_year',
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'Tahun Mulai wajib diisi.',
+            ]
+        ],
+        'end_year' => [
+            'label' => 'end_year',
+            'rules' => 'permit_empty|valid_year_range',
+            'errors' => [
+                'valid_year_range' => 'Tahun selesai tidak boleh lebih kecil dari tahun mulai.',
+            ]
         ],
     ];
 }
