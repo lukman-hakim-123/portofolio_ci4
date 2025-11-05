@@ -159,9 +159,8 @@ class Validation extends BaseConfig
     public array $education = [
         'logo' => [
             'label' => 'logo',
-            'rules' => 'uploaded[logo]|is_image[logo]|mime_in[logo,image/jpg,image/jpeg,image/png,image/webp]|max_size[logo,2048]',
+            'rules' => 'if_exist|is_image[logo]|mime_in[logo,image/jpg,image/jpeg,image/png,image/webp]|max_size[logo,2048]',
             'errors' => [
-                'uploaded' => 'Logo wajib diisi.',
                 'is_image' => 'File harus berupa gambar.',
                 'mime_in' => 'Format gambar tidak valid (hanya JPG, PNG, WEBP).',
                 'max_size' => 'Ukuran gambar maksimal 2MB.',

@@ -39,7 +39,7 @@ class ProfileController extends BaseController
         // Update data umum
         $user->fill([
             'username' => $this->request->getPost('username'),
-            'email'    => $this->request->getPost('email'), // <== ini penting!
+            'email'    => $this->request->getPost('email'),
             'bio'      => $this->request->getPost('bio'),
             'social_links' => json_encode([
                 'linkedin' => $this->request->getPost('linkedin'),
